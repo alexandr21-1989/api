@@ -40,8 +40,6 @@ def get_data(file_path: str) -> Dict[str, Any]:
             data = json.load(json_file)
         transformed_data = {}
         for key, value in data.items():
-            print(value['PROPERTIES']["KOEFFITSIENT_VOLKHONKA"]["VALUE"], "KOEFFITSIENT_VOLKHONKA")
-            print(value['PROPERTIES']["KOEFFITSIENT_OKTYABRSKAYA"]["VALUE"], "KOEFFITSIENT_OKTYABRSKAYA")
             KOEFFITSIENT = float(value['PROPERTIES']["KOEFFITSIENT_VOLKHONKA"]["VALUE"] if
                 value['PROPERTIES']["KOEFFITSIENT_OKTYABRSKAYA"]["VALUE"] == "0" or value['PROPERTIES']["KOEFFITSIENT_OKTYABRSKAYA"]["VALUE"] == "" else
                 value['PROPERTIES']["KOEFFITSIENT_OKTYABRSKAYA"]["VALUE"])
